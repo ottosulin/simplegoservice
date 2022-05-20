@@ -16,15 +16,6 @@ test:
 clean:
 	rm -rf ./bin && git clean -Xdf
 
-deploy:
-	cd terraform
-	terraform init
-	terraform apply
-
-remove:
-	cd terraform
-	terraform destroy
-
 ensure:
 	GO111MODULE=on go mod tidy
 	GO111MODULE=on go mod vendor

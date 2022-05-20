@@ -44,9 +44,27 @@ jobs:
           go install github.com/securego/gosec/v2/cmd/gosec@latest
           gosec ./...
 
-      - name: Build
-        run: make build
+      - name: Build the image
+        run: |
+          docker build -t ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }} .
+      
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
 
-      # TODO: add docker build here
-     
-      # TODO: add push to container registry here...
+      - name: Login to ACR
+        uses: azure/docker-login@v1
+        with:
+          login-server: ottosk8slab.azurecr.io
+          username: ${{ secrets.AZURE_CLIENT_ID }}
+          password: ${{ secrets.AZURE_CLIENT_SECRET }}
+
+      - name: Push to registry
+        run: |
+          docker push ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}
