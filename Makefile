@@ -19,3 +19,6 @@ clean:
 ensure:
 	GO111MODULE=on go mod tidy
 	GO111MODULE=on go mod vendor
+
+deploy:
+  kubectl create secret docker-registry regcred --docker-server=ottosk8slab.azurecr.io --docker-username=$AZURE_CLIENT_ID --docker-password=$AZURE_CLIENT_SECRET
