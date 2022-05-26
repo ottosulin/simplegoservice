@@ -42,7 +42,7 @@ jobs:
       - name: Run Gosec Security Scanner
         run: |
           go install github.com/securego/gosec/v2/cmd/gosec@latest
-          gosec ./...
+          gosec -exclude=G404 ./...
 
       - name: Build the image
         run: |

@@ -110,7 +110,10 @@ func Initdb() {
 
 	// Automatically create the "accounts" table based on the `Account`
 	// model.
-	db.AutoMigrate(&Account{})
+	err = db.AutoMigrate(&Account{})
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// The number of initial rows to insert
 	const numAccts int = 5
