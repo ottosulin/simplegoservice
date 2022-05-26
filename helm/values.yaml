@@ -8,7 +8,7 @@ image:
   repository: ottosk8slab.azurecr.io/simplegoservice
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "c99538a8c54b5bbc877285b2600d1c80beb9b418"
+  tag: "latest"
 
 imagePullSecrets:
   - name: regcred

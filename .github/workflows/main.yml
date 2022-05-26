@@ -68,3 +68,4 @@ jobs:
       - name: Push to registry
         run: |
           docker push ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}
+          docker push ottosk8slab.azurecr.io/simplegoservice:latest
