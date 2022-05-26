@@ -22,7 +22,11 @@ ensure:
 
 testdeploy: installcockroach
   kubectl create secret docker-registry regcred --docker-server=ottosk8slab.azurecr.io --docker-username=$AZURE_CLIENT_ID --docker-password=$AZURE_CLIENT_SECRET
-  helm install simplegoservice helm/ --values helm/values.yaml 
+  helm install simplegoservice helm/ --values helm/values.yaml
+
+testredeploy:
+  helm delete simplegoservice
+  helm install simplegoservice helm/ --values helm/values.yaml
 
 installcockroach:
   kubectl apply -f cockroachdb/crds.yaml
