@@ -31,14 +31,6 @@ jobs:
         with:
           go-version: 1.17.x
 
-      # TODO: enable after publishing project
-      # - name: OSSF Scorecard
-      #   env:
-      #     PAT: ${{ secrets.GDPAT }}
-      #   run: |
-      #     docker run -e GITHUB_AUTH_TOKEN=${{ secrets.GDPAT }} gcr.io/openssf/scorecard:stable --show-details --repo=https://github.com/ottosulin/aws-gd-threatintel
-
-      # TODO: official actions fails to find packages for some strange reason
       - name: Run Gosec Security Scanner
         run: |
           go install github.com/securego/gosec/v2/cmd/gosec@latest
