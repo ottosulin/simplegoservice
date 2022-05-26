@@ -39,6 +39,7 @@ jobs:
       - name: Build the image
         run: |
           docker build -t ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }} .
+          docker build -t ottosk8slab.azurecr.io/simplegoservice:latest .
       
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
