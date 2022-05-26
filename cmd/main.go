@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	httpserver.Initdb()
 	http.HandleFunc("/hello", httpserver.Hello)
 	http.HandleFunc("/headers", httpserver.Headers)
 

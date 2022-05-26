@@ -47,6 +47,9 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: client-certs
+              mountPath: /cockroach/cockroach-certs/
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -59,3 +62,20 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+      - name: client-certs
+        projected:
+            sources:
+              - secret:
+                  name: cockroachdb-node
+                  items:
+                    - key: ca.crt
+                      path: ca.crt
+              - secret:
+                  name: cockroachdb-root
+                  items:
+                    - key: tls.crt
+                      path: client.root.crt
+                    - key: tls.key
+                      path: client.root.key
+            defaultMode: 256
