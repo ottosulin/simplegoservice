@@ -19,13 +19,15 @@ func Headers(w http.ResponseWriter, req *http.Request) {
 	}
 	db, err := openDB()
 	if err != nil {
-		log.Fatalln(err)
-	}
-	var accounts []Account
-	db.Find(&accounts)
-	fmt.Fprintf(w, "Balance at '%s':\n", time.Now())
-	for _, account := range accounts {
-		fmt.Fprintf(w, "%s %d\n", account.ID, account.Balance)
+		// We're fine running without the database
+		log.Println("Can't get the DB: ", err)
+	} else {
+		var accounts []Account
+		db.Find(&accounts)
+		fmt.Fprintf(w, "Balance at '%s':\n", time.Now())
+		for _, account := range accounts {
+			fmt.Fprintf(w, "%s %d\n", account.ID, account.Balance)
+		}
 	}
 
 }

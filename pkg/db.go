@@ -101,18 +101,18 @@ func openDB() (*gorm.DB, error) {
 	return db, nil
 }
 
-func Initdb() {
+func Initdb() error {
 
 	db, err := gorm.Open(postgres.Open(*addr), &gorm.Config{})
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	// Automatically create the "accounts" table based on the `Account`
 	// model.
 	err = db.AutoMigrate(&Account{})
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	// The number of initial rows to insert
@@ -132,7 +132,7 @@ func Initdb() {
 	); err != nil {
 		// For information and reference documentation, see:
 		//   https://www.cockroachlabs.com/docs/stable/error-handling-and-troubleshooting.html
-		fmt.Println(err)
+		return err
 	}
 
 	// Print balances before transfer.
@@ -152,7 +152,7 @@ func Initdb() {
 	); err != nil {
 		// For information and reference documentation, see:
 		//   https://www.cockroachlabs.com/docs/stable/error-handling-and-troubleshooting.html
-		fmt.Println(err)
+		return err
 	}
 
 	// Print balances after transfer to ensure that it worked.
@@ -170,4 +170,5 @@ func Initdb() {
 	// 	//   https://www.cockroachlabs.com/docs/stable/error-handling-and-troubleshooting.html
 	// 	fmt.Println(err)
 	// }
+	return nil
 }

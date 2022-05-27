@@ -20,15 +20,10 @@ ensure:
 	GO111MODULE=on go mod tidy
 	GO111MODULE=on go mod vendor
 
-testdeploy: installcockroach
-  kubectl create secret docker-registry regcred --docker-server=ottosk8slab.azurecr.io --docker-username=$AZURE_CLIENT_ID --docker-password=$AZURE_CLIENT_SECRET
-  helm install simplegoservice helm/ --values helm/values.yaml
+testdeploy:
+	kubectl create secret docker-registry regcred --docker-server=ottosk8slab.azurecr.io --docker-username=$AZURE_CLIENT_ID --docker-password=$AZURE_CLIENT_SECRET
+	helm install simplegoservice helm/ --values helm/values.yaml
 
 testredeploy:
-  helm delete simplegoservice
-  helm install simplegoservice helm/ --values helm/values.yaml
-
-installcockroach:
-  kubectl apply -f cockroachdb/crds.yaml
-  kubectl apply -f cockroachdb/operator.yaml
-  kubectl apply -f cockroachdb/example.yaml
+	helm delete simplegoservice
+	helm install simplegoservice helm/ --values helm/values.yaml

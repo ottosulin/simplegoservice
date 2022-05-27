@@ -1,3 +1,4 @@
+{{- if .Values.cockroach.enabled -}}
 # Copyright 2022 The Cockroach Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +46,7 @@ spec:
     name: cockroachdb/cockroach:v21.2.8
   # nodes refers to the number of crdb pods that are created
   # via the statefulset
-  nodes: 3
+  nodes: {{ .Values.cockroach.nodes }}
   additionalLabels:
     crdb: is-cool
   # affinity is a new API field that is behind a feature gate that is
@@ -68,3 +69,4 @@ spec:
   # nodeSelectors used to match against
   # nodeSelector:
   #   worker-pool-name: crdb-workers
+{{- end }}
