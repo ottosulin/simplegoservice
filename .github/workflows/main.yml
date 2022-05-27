@@ -52,7 +52,7 @@ jobs:
 
       - name: Verify that repo SBOM and DockerHub container are the same
         run: |
-          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.18.3
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.28.1
           docker build -t ottosulin/simplegoservice:latest .
           trivy image --format cyclonedx --output sbom_candidate.json ottosulin/simplegoservice:latest
           diff sbom.json sbom_candidate.json
