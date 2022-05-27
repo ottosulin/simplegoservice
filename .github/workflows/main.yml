@@ -40,20 +40,20 @@ jobs:
           go install github.com/securego/gosec/v2/cmd/gosec@latest
           gosec -exclude=G404 ./...
 
+      - name: Run Trivy vulnerability scanner in FS mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          security-checks: 'vuln,config'
+          format: 'table'
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
+
       - name: Build the image
         run: |
           docker build -t ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }} .
           docker build -t ottosk8slab.azurecr.io/simplegoservice:latest .
-      
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}'
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
 
       - name: Login to ACR
         uses: azure/docker-login@v1
@@ -66,3 +66,14 @@ jobs:
         run: |
           docker push ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}
           docker push ottosk8slab.azurecr.io/simplegoservice:latest
+      
+      - name: Scan the built container image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+
