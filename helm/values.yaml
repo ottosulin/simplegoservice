@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: ottosk8slab.azurecr.io/simplegoservice
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
