@@ -23,13 +23,21 @@ jobs:
         with:
           go-version: 1.17.x
 
-      # TODO: official actions fails to find packages for some strange reason
+      - name: Ensure dependencies are up to date
+        run: |
+          make ensure
+
       - name: Run Gosec Security Scanner
         run: |
           go install github.com/securego/gosec/v2/cmd/gosec@latest
-          gosec ./...
+          gosec -exclude=G404 ./...
 
-      - name: Build
-        run: make build
-
-      # TODO: add docker build here
+      - name: Run Trivy vulnerability scanner in FS mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          security-checks: 'vuln,config'
+          format: 'table'
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
