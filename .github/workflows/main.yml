@@ -67,13 +67,13 @@ jobs:
           docker push ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}
           docker push ottosk8slab.azurecr.io/simplegoservice:latest
       
-      - name: Scan the built container image
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}'
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
+      # - name: Scan the built container image
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     image-ref: 'ottosk8slab.azurecr.io/simplegoservice:${{ github.sha }}'
+      #     format: 'table'
+      #     exit-code: '1'
+      #     ignore-unfixed: true
+      #     vuln-type: 'os,library'
+      #     severity: 'CRITICAL,HIGH'
 
