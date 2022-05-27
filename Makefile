@@ -3,7 +3,7 @@ ifeq ($(USE_JSON_OUTPUT), 1)
 GOTEST_REPORT_FORMAT := -json
 endif
 
-.PHONY: build clean deploy ensure test
+.PHONY: build clean deploy ensure test sign
 
 build:
 	env GOOS=linux go build -ldflags="-s -w" -o bin/simplegoservice cmd/main.go
@@ -20,8 +20,12 @@ ensure:
 	GO111MODULE=on go mod tidy
 	GO111MODULE=on go mod vendor
 
+sign:
+	docker build -t ottosulin/simplegoservice:latest .
+	trivy image --format cyclonedx --output sbom.json ottosulin/simplegoservice:latest
+	cosign sign-blob --key ~/.cosign/cosign.key sbom.json > sbom.sig
+
 testdeploy:
-	kubectl create secret docker-registry regcred --docker-server=ottosk8slab.azurecr.io --docker-username=$AZURE_CLIENT_ID --docker-password=$AZURE_CLIENT_SECRET
 	helm install simplegoservice helm/ --values helm/values.yaml
 
 testredeploy:
