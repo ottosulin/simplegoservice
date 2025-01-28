@@ -7,7 +7,8 @@ endif
 
 
 containerbuild:
-	docker buildx build --sbom=true -t ottosulin/simplegoservice:latest .
+	docker buildx build -t ottosulin/simplegoservice:latest .
+	docker push ottosulin/simplegoservice:latest
 
 build:
 	env GOOS=linux go build -ldflags="-s -w" -o bin/simplegoservice cmd/main.go
@@ -22,6 +23,7 @@ clean:
 
 installtools:
 	brew install oras
+	brew install osv-scanner
 	brew install cdxgen
 
 ensure:
@@ -31,9 +33,9 @@ ensure:
 gensbom:
 #	trivy image --format cyclonedx --output sbom.json ottosulin/simplegoservice:latest
 	cdxgen -t docker -o bom.json .
-	cdxgen -t golang -o bom-golang.json .
+#	cdxgen -t golang -o bom-golang.json .
 	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./bom.json:application/json
-	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./bom-golang.json:application/json
+#	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./bom-golang.json:application/json
 
 checksbom:
 # SPDX SBOM
