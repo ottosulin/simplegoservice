@@ -5,6 +5,10 @@ endif
 
 .PHONY: build clean deploy ensure test sign
 
+
+containerbuild:
+	docker buildx build --sbom=true -t ottosulin/simplegoservice:latest .
+
 build:
 	env GOOS=linux go build -ldflags="-s -w" -o bin/simplegoservice cmd/main.go
 
@@ -16,14 +20,33 @@ test:
 clean:
 	rm -rf ./bin && git clean -Xdf
 
+installtools:
+	brew install oras
+	brew install cdxgen
+
 ensure:
 	GO111MODULE=on go mod tidy
 	GO111MODULE=on go mod vendor
 
+gensbom:
+#	trivy image --format cyclonedx --output sbom.json ottosulin/simplegoservice:latest
+	cdxgen -t docker -o bom.json .
+	cdxgen -t golang -o bom-golang.json .
+	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./bom.json:application/json
+	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./bom-golang.json:application/json
+
+checksbom:
+# SPDX SBOM
+#	docker buildx imagetools inspect ottosulin/simplegoservice:latest --format "{{json .SBOM}}"
+	oras discover -o tree docker.io/ottosulin/simplegoservice:latest
+
+scansbom:
+	osv-scanner --sbom=bom.json
+	osv-scanner --sbom=bom-golang.json
+
 sign:
-	docker build -t ottosulin/simplegoservice:latest .
-	trivy image --format cyclonedx --output sbom.json ottosulin/simplegoservice:latest
-	cosign sign-blob --key ~/.cosign/cosign.key sbom.json > sbom.sig
+	cosign sign-blob --key ~/.cosign/cosign.key bom.json > sbom.sig
+	cosign sign-blob --key ~/.cosign/cosign.key bom-golang.json > sbom-golang.sig
 
 testdeploy:
 	helm install simplegoservice helm/ --values helm/values.yaml
