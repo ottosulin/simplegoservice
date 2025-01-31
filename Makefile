@@ -3,11 +3,10 @@ ifeq ($(USE_JSON_OUTPUT), 1)
 GOTEST_REPORT_FORMAT := -json
 endif
 
-.PHONY: build clean deploy ensure test sign
+.PHONY: build clean deploy ensure test sign verify viewsbom checksbom scansbom
 
-
-containerbuild:
-	docker buildx build -t ottosulin/simplegoservice:latest .
+containerbuild: build
+	docker buildx build -t ottosulin/simplegoservice:latest . --no-cache
 	docker push ottosulin/simplegoservice:latest
 
 build:
@@ -25,30 +24,36 @@ installtools:
 	brew install oras
 	brew install osv-scanner
 	brew install cdxgen
+	brew install aquasecurity/trivy/trivy
 
 ensure:
+	go get -u ./...
 	GO111MODULE=on go mod tidy
-	GO111MODULE=on go mod vendor
+#	GO111MODULE=on go mod vendor
 
 gensbom:
-#	trivy image --format cyclonedx --output sbom.json ottosulin/simplegoservice:latest
-	cdxgen -t docker -o bom.json .
-#	cdxgen -t golang -o bom-golang.json .
-	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./bom.json:application/json
-#	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./bom-golang.json:application/json
+	trivy image --format cyclonedx --output sbom.json ottosulin/simplegoservice:latest
+#	cdxgen -t docker -o bom.json .
+	oras attach --artifact-type sbom/cyclonedx docker.io/ottosulin/simplegoservice:latest ./sbom.json:application/json
 
-checksbom:
+#viewsbom:
 # SPDX SBOM
 #	docker buildx imagetools inspect ottosulin/simplegoservice:latest --format "{{json .SBOM}}"
-	oras discover -o tree docker.io/ottosulin/simplegoservice:latest
+#	oras discover -o tree docker.io/ottosulin/simplegoservice:latest
+
+checksbom:
+	trivy image --format cyclonedx --output sbom_candidate.json ottosulin/simplegoservice:latest
+	diff sbom.json sbom_candidate.json
 
 scansbom:
-	osv-scanner --sbom=bom.json
-	osv-scanner --sbom=bom-golang.json
+	osv-scanner --sbom=sbom.json
 
+# Note this would be used without OIDC signing
 sign:
-	cosign sign-blob --key ~/.cosign/cosign.key bom.json > sbom.sig
-	cosign sign-blob --key ~/.cosign/cosign.key bom-golang.json > sbom-golang.sig
+	cosign sign-blob --key ~/.cosign/cosign.key sbom.json > sbom.sig
+
+verify:
+	cosign verify ottosulin/simplegoservice:latest --certificate-identity "https://github.com/YOUR_ORG/YOUR_REPO/.github/workflows/main.yml@refs/heads/main" --certificate-oidc-issuer "https://token.actions.githubusercontent.com"
 
 testdeploy:
 	helm install simplegoservice helm/ --values helm/values.yaml

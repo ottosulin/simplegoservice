@@ -1,0 +1,894 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:35b6c71b-0785-44db-a65e-c656c90999d7",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-01-31T08:16:27+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.59.0"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "pkg:oci/simplegoservice@sha256%3A41602fffbdd5e777eaa7506a79703ded4303ea7c4e776d7cf0535e045540a2fa?arch=arm64&repository_url=index.docker.io%2Fottosulin%2Fsimplegoservice",
+      "type": "container",
+      "name": "ottosulin/simplegoservice:latest",
+      "purl": "pkg:oci/simplegoservice@sha256%3A41602fffbdd5e777eaa7506a79703ded4303ea7c4e776d7cf0535e045540a2fa?arch=arm64&repository_url=index.docker.io%2Fottosulin%2Fsimplegoservice",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:1a73b54f556b477f0a8b939d13c504a3b4f4db71f7a09c63afbc10acb3de5849"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:2388d21e8e2b74e055216652e6af384768e97513ad568e10c27bacec389b7f0a"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:2a92d6ac9e4fcc274d5168b217ca4458a9fec6f094ead68d99c77073f08caac1"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:4d049f83d9cf21d1f5cc0e11deaf36df02790d0e60c1a3829538fb4b61685368"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:577c8ee06f39e2bc276615f1058fa40081255ce5e2f072df4875e27868de5660"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:585c77542105ddeae6a8166dfaca8cd1ab276b410a3f5de535e4916c8a21d694"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:9ed498e122b248a801130d052c25418381ee7bf215cdf7990965bae0dc37dcc2"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:ac805962e47900b616b2f4b4584a34ac7b07d64ac1fd2c077478cf65311addcc"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:af5aa97ebe6ce1604747ec1e21af7136ded391bcabe4acef882e718a87c86bcc"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:bbb6cacb8c82e4da4e8143e03351e939eab5e21ce0ef333c42e637af86c5217b"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:c048279a7d9f8e94b4c022b699ad8e8a0cb08b717b014ce4af15afaf375a6ac2"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:c656415fb81c800f0d72fc0249314587debcad9b185edf93b49bbc877472490b"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:dc9b510a903bfb1be3316f5aad2bb3e5183fba859f8c983485df64deaa92903f"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:f702e48e7f928077aa5b7dc0f733b55714e063c25cfd7806a2810894d0ce9e0f"
+        },
+        {
+          "name": "aquasecurity:trivy:ImageID",
+          "value": "sha256:b577637581d04ed834479dc857fdf5095e3a7777de9c3409af292be045a31c82"
+        },
+        {
+          "name": "aquasecurity:trivy:RepoDigest",
+          "value": "ottosulin/simplegoservice@sha256:41602fffbdd5e777eaa7506a79703ded4303ea7c4e776d7cf0535e045540a2fa"
+        },
+        {
+          "name": "aquasecurity:trivy:RepoTag",
+          "value": "ottosulin/simplegoservice:latest"
+        },
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "b543e730-cf5f-4e2f-8a72-a25c6b9a76e8",
+      "type": "operating-system",
+      "name": "debian",
+      "version": "11.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "os-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "debian"
+        }
+      ]
+    },
+    {
+      "bom-ref": "cb862ad6-ab51-46f9-81f3-7be2588b8501",
+      "type": "application",
+      "name": "simplegoservice",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:deb/debian/base-files@11.1%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+      "type": "library",
+      "supplier": {
+        "name": "Santiago Vila <sanvila@debian.org>"
+      },
+      "name": "base-files",
+      "version": "11.1+deb11u10",
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/base-files@11.1%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:c656415fb81c800f0d72fc0249314587debcad9b185edf93b49bbc877472490b"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:d10f96ed96078c646b4bbea25eebfbc7fe4276efe46b3141b52a31a5a68d829e"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "base-files@11.1+deb11u10"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "debian"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "base-files"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "11.1+deb11u10"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:deb/debian/libc6@2.31-13%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+      "type": "library",
+      "supplier": {
+        "name": "GNU Libc Maintainers <debian-glibc@lists.debian.org>"
+      },
+      "name": "libc6",
+      "version": "2.31-13+deb11u10",
+      "licenses": [
+        {
+          "license": {
+            "name": "LGPL-2.1-only"
+          }
+        },
+        {
+          "license": {
+            "name": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/libc6@2.31-13%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:585c77542105ddeae6a8166dfaca8cd1ab276b410a3f5de535e4916c8a21d694"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:ad38aa25855a9e03b49e4d320c433a74d14d65b41aeffde9142d2a9eb27c1af3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "libc6@2.31-13+deb11u10"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "debian"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "glibc"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcRelease",
+          "value": "13+deb11u10"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "2.31"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+      "type": "library",
+      "supplier": {
+        "name": "Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>"
+      },
+      "name": "libssl1.1",
+      "version": "1.1.1w-0+deb11u1",
+      "purl": "pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:dc9b510a903bfb1be3316f5aad2bb3e5183fba859f8c983485df64deaa92903f"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:bd05083bc406c42b7ed1f127933dbbf3d2c52260c9fad902fd59e15f31715d32"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "libssl1.1@1.1.1w-0+deb11u1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "debian"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "openssl"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcRelease",
+          "value": "0+deb11u1"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.1.1w"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:deb/debian/netbase@6.3?arch=all&distro=debian-11.10",
+      "type": "library",
+      "supplier": {
+        "name": "Marco d'Itri <md@linux.it>"
+      },
+      "name": "netbase",
+      "version": "6.3",
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:deb/debian/netbase@6.3?arch=all&distro=debian-11.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:577c8ee06f39e2bc276615f1058fa40081255ce5e2f072df4875e27868de5660"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:2ae710cd8bfef4545fa3a6dc274d6b7a991ca379cdaa3cdf460d5cb5840a3c88"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "netbase@6.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "debian"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "netbase"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "6.3"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:deb/debian/openssl@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+      "type": "library",
+      "supplier": {
+        "name": "Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>"
+      },
+      "name": "openssl",
+      "version": "1.1.1w-0+deb11u1",
+      "purl": "pkg:deb/debian/openssl@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f702e48e7f928077aa5b7dc0f733b55714e063c25cfd7806a2810894d0ce9e0f"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:b4cedb3407caa77b214ad833914c533a0fd78c3292cce24783753c0c86b4f71f"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "openssl@1.1.1w-0+deb11u1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "debian"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "openssl"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcRelease",
+          "value": "0+deb11u1"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.1.1w"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:deb/debian/tzdata@2024a-0%2Bdeb11u1?arch=all&distro=debian-11.10",
+      "type": "library",
+      "supplier": {
+        "name": "GNU Libc Maintainers <debian-glibc@lists.debian.org>"
+      },
+      "name": "tzdata",
+      "version": "2024a-0+deb11u1",
+      "purl": "pkg:deb/debian/tzdata@2024a-0%2Bdeb11u1?arch=all&distro=debian-11.10",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:9ed498e122b248a801130d052c25418381ee7bf215cdf7990965bae0dc37dcc2"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:d462aa3453675bb1f9a271a72cc72a53e628521a7d0e94b720bd07f9ca4962dc"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "tzdata@2024a-0+deb11u1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "debian"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "tzdata"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcRelease",
+          "value": "0+deb11u1"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "2024a"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/cockroachdb/cockroach-go/v2@v2.3.8",
+      "type": "library",
+      "name": "github.com/cockroachdb/cockroach-go/v2",
+      "version": "v2.3.8",
+      "purl": "pkg:golang/github.com/cockroachdb/cockroach-go/v2@v2.3.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/cockroachdb/cockroach-go/v2@v2.3.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/google/uuid@v1.6.0",
+      "type": "library",
+      "name": "github.com/google/uuid",
+      "version": "v1.6.0",
+      "purl": "pkg:golang/github.com/google/uuid@v1.6.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/google/uuid@v1.6.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/jackc/pgpassfile@v1.0.0",
+      "type": "library",
+      "name": "github.com/jackc/pgpassfile",
+      "version": "v1.0.0",
+      "purl": "pkg:golang/github.com/jackc/pgpassfile@v1.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/jackc/pgpassfile@v1.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+      "type": "library",
+      "name": "github.com/jackc/pgservicefile",
+      "version": "v0.0.0-20240606120523-5a60cdf6a761",
+      "purl": "pkg:golang/github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/jackc/pgx/v5@v5.7.2",
+      "type": "library",
+      "name": "github.com/jackc/pgx/v5",
+      "version": "v5.7.2",
+      "purl": "pkg:golang/github.com/jackc/pgx/v5@v5.7.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/jackc/pgx/v5@v5.7.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/jackc/puddle/v2@v2.2.2",
+      "type": "library",
+      "name": "github.com/jackc/puddle/v2",
+      "version": "v2.2.2",
+      "purl": "pkg:golang/github.com/jackc/puddle/v2@v2.2.2",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/jackc/puddle/v2@v2.2.2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/jinzhu/inflection@v1.0.0",
+      "type": "library",
+      "name": "github.com/jinzhu/inflection",
+      "version": "v1.0.0",
+      "purl": "pkg:golang/github.com/jinzhu/inflection@v1.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/jinzhu/inflection@v1.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/jinzhu/now@v1.1.5",
+      "type": "library",
+      "name": "github.com/jinzhu/now",
+      "version": "v1.1.5",
+      "purl": "pkg:golang/github.com/jinzhu/now@v1.1.5",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/jinzhu/now@v1.1.5"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/ottosulin/simplegoservice",
+      "type": "library",
+      "name": "github.com/ottosulin/simplegoservice",
+      "purl": "pkg:golang/github.com/ottosulin/simplegoservice",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/ottosulin/simplegoservice"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/crypto@v0.32.0",
+      "type": "library",
+      "name": "golang.org/x/crypto",
+      "version": "v0.32.0",
+      "purl": "pkg:golang/golang.org/x/crypto@v0.32.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/crypto@v0.32.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/sync@v0.10.0",
+      "type": "library",
+      "name": "golang.org/x/sync",
+      "version": "v0.10.0",
+      "purl": "pkg:golang/golang.org/x/sync@v0.10.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/sync@v0.10.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/text@v0.21.0",
+      "type": "library",
+      "name": "golang.org/x/text",
+      "version": "v0.21.0",
+      "purl": "pkg:golang/golang.org/x/text@v0.21.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/text@v0.21.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/gorm.io/driver/postgres@v1.5.11",
+      "type": "library",
+      "name": "gorm.io/driver/postgres",
+      "version": "v1.5.11",
+      "purl": "pkg:golang/gorm.io/driver/postgres@v1.5.11",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "gorm.io/driver/postgres@v1.5.11"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/gorm.io/gorm@v1.25.12",
+      "type": "library",
+      "name": "gorm.io/gorm",
+      "version": "v1.25.12",
+      "purl": "pkg:golang/gorm.io/gorm@v1.25.12",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "gorm.io/gorm@v1.25.12"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/stdlib@v1.23.5",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.23.5",
+      "purl": "pkg:golang/stdlib@v1.23.5",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:2968d1a514bc860f0dd6d209cbc0adbca35bc0b53136622a9534457ca04d43f4"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDigest",
+          "value": "sha256:674ee8be7c5c064a9939b42d66c1cc73cbd3e4d5474aa9f7462bb3c383a0ba02"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.23.5"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "b543e730-cf5f-4e2f-8a72-a25c6b9a76e8",
+      "dependsOn": [
+        "pkg:deb/debian/base-files@11.1%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+        "pkg:deb/debian/libc6@2.31-13%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+        "pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+        "pkg:deb/debian/netbase@6.3?arch=all&distro=debian-11.10",
+        "pkg:deb/debian/openssl@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+        "pkg:deb/debian/tzdata@2024a-0%2Bdeb11u1?arch=all&distro=debian-11.10"
+      ]
+    },
+    {
+      "ref": "cb862ad6-ab51-46f9-81f3-7be2588b8501",
+      "dependsOn": [
+        "pkg:golang/github.com/cockroachdb/cockroach-go/v2@v2.3.8",
+        "pkg:golang/github.com/google/uuid@v1.6.0",
+        "pkg:golang/github.com/jackc/pgpassfile@v1.0.0",
+        "pkg:golang/github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+        "pkg:golang/github.com/jackc/pgx/v5@v5.7.2",
+        "pkg:golang/github.com/jackc/puddle/v2@v2.2.2",
+        "pkg:golang/github.com/jinzhu/inflection@v1.0.0",
+        "pkg:golang/github.com/jinzhu/now@v1.1.5",
+        "pkg:golang/github.com/ottosulin/simplegoservice",
+        "pkg:golang/golang.org/x/crypto@v0.32.0",
+        "pkg:golang/golang.org/x/sync@v0.10.0",
+        "pkg:golang/golang.org/x/text@v0.21.0",
+        "pkg:golang/gorm.io/driver/postgres@v1.5.11",
+        "pkg:golang/gorm.io/gorm@v1.25.12",
+        "pkg:golang/stdlib@v1.23.5"
+      ]
+    },
+    {
+      "ref": "pkg:deb/debian/base-files@11.1%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:deb/debian/libc6@2.31-13%2Bdeb11u10?arch=arm64&distro=debian-11.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:deb/debian/libssl1.1@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:deb/debian/netbase@6.3?arch=all&distro=debian-11.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:deb/debian/openssl@1.1.1w-0%2Bdeb11u1?arch=arm64&distro=debian-11.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:deb/debian/tzdata@2024a-0%2Bdeb11u1?arch=all&distro=debian-11.10",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/cockroachdb/cockroach-go/v2@v2.3.8",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/google/uuid@v1.6.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/jackc/pgpassfile@v1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/jackc/pgx/v5@v5.7.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/jackc/puddle/v2@v2.2.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/jinzhu/inflection@v1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/jinzhu/now@v1.1.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/ottosulin/simplegoservice",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/crypto@v0.32.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sync@v0.10.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/text@v0.21.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/gorm.io/driver/postgres@v1.5.11",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/gorm.io/gorm@v1.25.12",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/stdlib@v1.23.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:oci/simplegoservice@sha256%3A41602fffbdd5e777eaa7506a79703ded4303ea7c4e776d7cf0535e045540a2fa?arch=arm64&repository_url=index.docker.io%2Fottosulin%2Fsimplegoservice",
+      "dependsOn": [
+        "b543e730-cf5f-4e2f-8a72-a25c6b9a76e8",
+        "cb862ad6-ab51-46f9-81f3-7be2588b8501"
+      ]
+    }
+  ],
+  "vulnerabilities": []
+}
