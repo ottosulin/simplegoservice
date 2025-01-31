@@ -36,9 +36,9 @@ jobs:
       #     make ensure
 
       - name: Run Gosec Security Scanner
-        run: |
-          go install github.com/securego/gosec/v2/cmd/gosec@latest
-          gosec -exclude=G404 ./...
+        uses: securego/gosec@v2.22.0
+        with:
+          args: ./...
 
       - name: Run Trivy vulnerability scanner in FS mode
         uses: aquasecurity/trivy-action@master
