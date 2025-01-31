@@ -23,7 +23,7 @@ clean:
 installtools:
 	brew install oras
 	brew install osv-scanner
-	brew install cdxgen
+#	brew install cdxgen
 	brew install aquasecurity/trivy/trivy
 
 ensure:
